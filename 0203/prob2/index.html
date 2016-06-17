@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Asynchronous Challenge</title>
+  </head>
+  <body>
+    <h1>And the total likes are...</h1>
+    <div id="total-likes">
+      loading...
+    </div>
+
+    <script type="text/javascript">
+      var usersRequest = new XMLHttpRequest;
+      usersRequest.open('GET', '/users');
+      usersRequest.responseType = 'json';
+      usersRequest.addEventListener('load', function () {
+        // your code here
+      });
+      usersRequest.send();
+    </script>
+
+  </body>
+</html>

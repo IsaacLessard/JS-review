@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tip Calculator</title>
+  </head>
+  <body>
+    <center><h1>Tip Calculator</h1>
+    <form>
+      <input type="integer" id="amount" placeholder = "enter an amount...">
+      <br>
+      <br>
+      <select id="tipSize">
+        <option value=".10">%10</option>
+        <option value=".15">%15</option>
+        <option value=".20">%20</option>
+      </select>
+      <!-- <br> -->
+      <!-- <button type="button">Calculate Tip</button> -->
+    </form></center>
+    <script type="text/javascript">
+      // var button = document.querySelector("button");
+      // var amount, tip, dollarAmount, tipSize;
+      // button.addEventListener("click", function(e){
+      //   dollarAmount = document.getElementById("amount").value;
+      //   dollarAmount.split("$")[1] ? amount = dollarAmount.split("$")[1] : amount = dollarAmount;
+      //   tipSize = document.getElementById("tipSize").value;
+      //   tip = (amount*tipSize).toFixed(2);
+      //   if(tip === "NaN"){
+      //     document.getElementById("tip amount").innerHTML = "You done fucked up. Go out back and fetch me a switch.";
+      //   } else{
+      //     document.getElementById("tip amount").innerHTML = "You should tip $" + tip;
+      //   }
+      // })
+      var input = document.querySelector("input");
+      var select = document.querySelector("select");
+      var amount, tip, dollarAmount, tipSize;
+      input.addEventListener("input", function(e){
+        dollarAmount = document.getElementById("amount").value;
+        dollarAmount.split("$")[1] ? amount = dollarAmount.split("$")[1] : amount = dollarAmount;
+        tipSize = document.getElementById("tipSize").value;
+        tip = (amount*tipSize).toFixed(2);
+        if(tip === "NaN"){
+          document.getElementById("tip amount").innerHTML = "You done fucked up. Go out back and fetch me a switch.";
+        } else{
+          document.getElementById("tip amount").innerHTML = "You should tip $" + tip;
+        }
+      })
+      select.addEventListener("mousemove", function(e){
+        dollarAmount = document.getElementById("amount").value;
+        dollarAmount.split("$")[1] ? amount = dollarAmount.split("$")[1] : amount = dollarAmount;
+        tipSize = document.getElementById("tipSize").value;
+        tip = (amount*tipSize).toFixed(2);
+        if(tip === "NaN"){
+          document.getElementById("tip amount").innerHTML = "You done fucked up. Go out back and fetch me a switch.";
+        } else{
+          document.getElementById("tip amount").innerHTML = "You should tip $" + tip;
+        }
+      })
+    </script>
+    <br>
+    <center><h3 id="tip amount"></h3></center>
+  </body>
+</html>
